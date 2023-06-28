@@ -3,4 +3,4 @@ Um banco de dados experimental em Node baseado em SQL Lite, inicialmente não su
 
 
 Print:
-
+![alt text](images/print.png)
