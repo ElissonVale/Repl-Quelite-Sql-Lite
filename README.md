@@ -2,5 +2,5 @@
 Um banco de dados experimental em Node baseado em SQL Lite, inicialmente não suporta conexões apenas executa um prompt repl para gerenciar bancos tabelas e registros.
 
 
-Print:
+
 ![alt text](images/print.png)
