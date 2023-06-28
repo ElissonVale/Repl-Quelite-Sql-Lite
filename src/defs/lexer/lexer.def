@@ -1,0 +1,37 @@
+# referência https://github.com/antlr/grammars-v4/blob/master/php/PhpLexer.g4 #
+# identifica strings e números #
+
+_letra_: 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' |
+'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' ;
+
+_digito_octal_: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' ;
+
+_digito_exadecimal_: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' ;
+
+_digito_numerico_: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' ;
+
+_numeros_: [0-9] ;
+
+_carateres_: [a-z] | [A-Z] | [0-9];
+
+_text_: _carateres_ ;
+
+_list_text_: _list_text_ _text_ ;
+
+_operadores_matematicos_: + | - | / | * ;
+
+_operadores_logicos_:  == | != | > | < | >= | <= ;
+
+_declaradores_variaveis_: var ;
+
+_declaracao_variavel_: _declaradores_variaveis_ _text_ ;
+
+_declaradores_funcoes_: def ;
+
+_escopo_codigo_: _list_text_ | _operadores_matematicos_ | _operadores_logicos_ ;
+
+_parametros_funcao_: '(' ')' | '(' _list_text_ ')' ;
+
+_escopo_funcao_: '{' _escopo_codigo_ '}' ;
+
+_declaracao_funcao_: _declaradores_funcoes_ _text_ _parametros_funcao_ _escopo_funcao_ ;
