@@ -2,42 +2,70 @@
 import * as _queue_manager from './../../queuelite.mjs'
 import * as _fsmanager from './../../filesystem/manager.mjs'
 
-const _path_lexer = "./defs/lexer/lexer.def"
+const _path_lexer_def = "./defs/lexer/lexer.def"
+const _path_lexer_tree = "./defs/lexer/lexer_tree.json"
 
-const lexer = (query, lexer_tree) => {
-    let query_commands = query.trim().split(";");
+var lexer_tree = JSON.parse(_fsmanager.read(_path_lexer_tree));
 
-    let command_split = query_commands.map((item) => {
+const caracter_repeat = (string, search) => {
 
-    })
+}
 
-    // query.trim().replaceAll(', ', ',').replace(";", "").split(" ")
-
-    return command_split.map((item) => {
-        return { "command": "", "roles": "roles" };
-    })
+export const reload_lexer = () => {
+    lexer_tree = command_rules();
+    _fsmanager.write(_path_lexer_tree, JSON.stringify(lexer_tree))
+    console.log("Arvore do lexer recarregada:")
+    console.log(lexer_tree)
 }
 
 const command_rules = () => {
-    let lexer_string = _fsmanager.read(_path_lexer).replace(" ", "").replace(/(\r\n|\n|\r)/gm, "")
-    
-    let lexer_split = lexer_string.substring(lexer_string.lastIndexOf("#") + 1, lexer_string.lastIndexOf(";")).split(";")
+    let coments = [], acumulate = '';
 
-    return lexer_split.map((item) => {
+    let lexer_string = _fsmanager.read(_path_lexer_def).replaceAll(" ", "").replace(/(\r\n|\n|\r)/gm, "").trim()
+
+    // Acumula os indices de comentários comentários
+    lexer_string.split('').map((item) => { 
+        if(item === "#" || acumulate.length > 0) 
+            acumulate += item;
+        if(acumulate.split("#").length >= 3) {
+            coments.push(acumulate);
+            acumulate = '';
+        }
+    })
+
+    // Remove os comentários
+    coments.map((item) => {
+        lexer_string = lexer_string.replace(item, "");
+    });
+    
+    let lexer_split = lexer_string.split(";")
+
+    // Cria a arvore do lexer
+    let lexer_array = lexer_split.map((item) => {
         let command = item.substring(0, item.indexOf(':'))
         let rules = item.substring(item.indexOf(':') + 1).split("|")    
         return { "command": command  , "rules": rules };
     })
+
+    // return lexer_array.map((item) => {
+    //     if(lexer_array['commands'].includes(item.roles)) {
+
+    //     }
+    // });
+
+    return lexer_array;
 }
 
-const convert_command = (query_lexer, lexer_tree) => {
-    let command_lexer = lexer_tree.filter(x => x.command == query_lexer[0]);
+const convert_command = (query) => {
+
 }
 
 export const parse_command = (query) => {
-    let query_lexer = lexer(query)
-    let lexer_tree = command_rules()
 
-    return convert_command(query_lexer, lexer_tree);
+    if(query.includes('lexer()')) {
+        reload_lexer();
+    }
+        
+    return convert_command(query);
 }
 

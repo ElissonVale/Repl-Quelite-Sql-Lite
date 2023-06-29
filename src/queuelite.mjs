@@ -1,5 +1,14 @@
 import * as _db_manager from './base/manager.mjs'
 
+var _database = "root";
+
+export const use_database = (database) => {
+    
+    _database = database;
+
+    show("message", `changed database '${database}'`)
+};
+
 export const show_databases = () => {
 
     let dataset = _db_manager.get_dataset()
@@ -23,9 +32,9 @@ export const drop_database = (database) => {
     show("message", `database [${database}] deleted!`)
 }
 
-export const show_tables = (database) => {
+export const show_tables = () => {
 
-    let databases = _db_manager.get_database(database)
+    let databases = _db_manager.get_database(_database)
 
     let tables = databases[0]['tables'].map(result => { return { table: result['name'], schema: result['schema'] } })
 
@@ -39,8 +48,7 @@ export const create_table = (table, data) => {
     let tables = databases[0]['tables'].filter(result => result["name"] === table)
 
     if(tables.length > 0) {
-        show("message", `table [${data["database"]}].[db].[${table}] already exists!`)
-        return
+        return show("message", `table [${data["database"]}].[db].[${table}] already exists!`)        
     }
 
     databases[0]['tables'].push({ 
@@ -58,7 +66,7 @@ export const create_table = (table, data) => {
 
 export const drop_table = (table, data) => {
 
-    let databases = _db_manager.get_database(data['database'])
+    let databases = _db_manager.get_database(_database)
 
     let _table = databases[0]["tables"].filter((result) => result["name"] === table);
     
@@ -78,7 +86,7 @@ export const drop_table = (table, data) => {
 
 export const insert_table = (table, data) => {
 
-    let databases = _db_manager.get_database(data['database'])
+    let databases = _db_manager.get_database(_database)
 
     let table_set = databases[0]['tables'].filter(result => result["name"] === table)
 
@@ -105,7 +113,7 @@ export const insert_table = (table, data) => {
 
 export const select_table = (table, data) => {
 
-    let database = _db_manager.get_database(data['database'])
+    let database = _db_manager.get_database(_database)
     
     let _table = database.tables.filter((result) => result["name"] === table);
     
@@ -113,7 +121,7 @@ export const select_table = (table, data) => {
 
 export const update_table = (table, data) => {
 
-    let database = _db_manager.get_database(data['database'])
+    let database = _db_manager.get_database(_database)
     
     let _table = database.tables.filter((result) => result["name"] === table);
     
@@ -121,7 +129,7 @@ export const update_table = (table, data) => {
 
 export const delete_table = (table, data) => {
 
-    let database = _db_manager.get_database(data['database'])
+    let database = _db_manager.get_database(_database)
     
     let _table = database.tables.filter((result) => result["name"] === table);
     
