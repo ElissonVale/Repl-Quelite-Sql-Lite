@@ -8,7 +8,7 @@ import * as _parser from './src/defs/parser/parser.mjs'
 _repl.init((query) => {
 
     _parser.lexer()
-    _quelite.show_databases()
+    // _quelite.show_databases()
 
     // _quelite.create_database("quelite")
 
