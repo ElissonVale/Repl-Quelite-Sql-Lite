@@ -2,8 +2,21 @@
 import * as _queue_manager from './../../queuelite.mjs'
 import * as _fsmanager from './../../filesystem/manager.mjs'
 
+const _path_lexer = "./defs/lexer/lexer.def"
 
-var _path_lexer = "./defs/lexer/lexer.def"
+const lexer = (query, lexer_tree) => {
+    let query_commands = query.trim().split(";");
+
+    let command_split = query_commands.map((item) => {
+
+    })
+
+    // query.trim().replaceAll(', ', ',').replace(";", "").split(" ")
+
+    return command_split.map((item) => {
+        return { "command": "", "roles": "roles" };
+    })
+}
 
 const command_rules = () => {
     let lexer_string = _fsmanager.read(_path_lexer).replace(" ", "").replace(/(\r\n|\n|\r)/gm, "")
@@ -17,8 +30,14 @@ const command_rules = () => {
     })
 }
 
+const convert_command = (query_lexer, lexer_tree) => {
+    let command_lexer = lexer_tree.filter(x => x.command == query_lexer[0]);
+}
 
-export const lexer = () => {
-    command_rules()
+export const parse_command = (query) => {
+    let query_lexer = lexer(query)
+    let lexer_tree = command_rules()
+
+    return convert_command(query_lexer, lexer_tree);
 }
 

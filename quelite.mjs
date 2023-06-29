@@ -1,13 +1,13 @@
 #! /bin/node
 
-import * as _quelite from './src/queuelite.mjs'
 import * as _repl from './repl.mjs'
-import * as _parser from './src/defs/parser/parser.mjs'
+import * as _command from './src/command.mjs'
 
 
 _repl.init((query) => {
 
-    _parser.lexer()
+    _command.execute(query);
+    
     // _quelite.show_databases()
 
     // _quelite.create_database("quelite")
