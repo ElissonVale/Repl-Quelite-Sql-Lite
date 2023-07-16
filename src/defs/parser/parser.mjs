@@ -16,14 +16,14 @@ const convert_command = (query) => {
             item = item.replace(`${command}`, '').trim();
             // Pega os rules para aceitados para o comando
             let rules = _lexer.lexer_tree.filter(x => x.command === command)[0].rules;
+
             // verifica se os 'rules' tem outras definições mais profundas como '_texto_' ou são palavras esperadas como 'tables'
             if(_lexer.verify_rules(rules)) {
-                // caso o comando tenha uma definição mais profunda
+                // Converte as arvores de rules em rules esperados para o comando em questão
+                
+                // Verifica se a query contém os rules esperados
+                console.log(rules)
             }
-
-            // Converte as arvores de rules em rules esperados para o comando em questão
-
-            // Verifica se a query contém os rules esperados
 
             // Converte os a string da query nos rules do comando
             let rules_query = _lexer.convert_rules_query(item, rules);

@@ -15,7 +15,7 @@ const command_map = (command) => {
     // Pega o nome do método mapeado para o queuelite
     let method = _commands_map.filter(x => x[command.command])[0][command.command];
     // Caso no mapeamento exista uma nuancia para um metodo mais simples faz novamente a busca com os rules
-    if(typeof(method) != String)
+    if(typeof(method) != "string")
         method = method[command.rules[0]];
     // Caso o comando não exista no queuelite para ser executado cria a exceção (o analisador lexico deve ser verificado, esse tipo de erro pode ser sintaxe)
     if(!!!_quelite[method]) {
@@ -30,6 +30,7 @@ export const execute = (query) => {
         let commands = _parser.parse_command(query);
 
         commands.forEach((command) => {
+            console.log(command)
             if(!!command) {
                 _quelite[command_map(command)](command.rules);
             }
