@@ -9,7 +9,7 @@ export const use_database = (database) => {
     show("message", `changed database '${database}'`)
 };
 
-export const show_databases = () => {
+export const show_databases = (rules) => {
 
     let dataset = _db_manager.get_dataset()
 
@@ -32,7 +32,7 @@ export const drop_database = (database) => {
     show("message", `database [${database}] deleted!`)
 }
 
-export const show_tables = () => {
+export const show_tables = (rules) => {
 
     let databases = _db_manager.get_database(_database)
 
