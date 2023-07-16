@@ -1,0 +1,109 @@
+Transporte escolar:
+    Desenvolvimento:
+      - name: ConnectionStringSqlWrite
+        value: 'data source=172.3.1.5;initial catalog=db_sara;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlRead
+        value: 'data source=172.3.1.5;initial catalog=db_sara;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlGeoRead
+        value: 'data source=172.3.1.5;initial catalog=db_geo_transporte;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: Connectionstringsqlcadastroread
+        value: 'data source=172.3.1.5;initial catalog=db_cadastro_transporte;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlCadTransRead
+        value: 'data source=172.3.1.5;initial catalog=cadtransporte;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlSaraRead
+        value: 'data source=172.3.1.5;initial catalog=db_sara;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringCadAlunoRead
+        value: 'data source=172.3.1.5;initial catalog=cadalunos;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlGeo
+        value: 'data source=172.3.1.5;initial catalog=db_geo_transporte;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlCadastro
+        value: 'data source=172.3.1.5;initial catalog=db_cadastro_transporte;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlCadTrans
+        value: 'data source=172.3.1.5;initial catalog=cadtransporte;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlSara
+        value: 'data source=172.3.1.5;initial catalog=db_sara;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringCadAluno
+        value: 'data source=172.3.1.5;initial catalog=cadalunos;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+
+    Homologação:
+      - name: ConnectionStringSqlWrite
+        value: 'data source=172.26.2.9,1433;initial catalog=DB_CADASTRO_TRANSPORTE;user id=user_transporte;password=O7Ch98f07m;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlRead
+        value: 'data source=172.26.2.9,1433;initial catalog=DB_CADASTRO_TRANSPORTE;user id=user_transporte;password=O7Ch98f07m;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlGeoRead
+        value: 'data source=172.26.2.9,1433;initial catalog=db_geo_transporte;user id=user_transporte;password=O7Ch98f07m;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: Connectionstringsqlcadastroread
+        value: 'data source=172.26.2.9,1433;initial catalog=db_cadastro_transporte;user id=user_transporte;password=O7Ch98f07m;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlCadTransRead
+        value: 'data source=172.26.2.9,1433;initial catalog=cadtransporte;user id=user_transporte;password=O7Ch98f07m;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlSaraRead
+        value: 'data source=172.26.2.9,1433;initial catalog=db_cadastro_transporte;user id=user_transporte;password=O7Ch98f07m;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringCadAlunoRead
+        value: 'data source=172.26.2.9,1433;initial catalog=cadalunos;user id=user_transporte;password=O7Ch98f07m;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlGeo
+        value: 'data source=172.26.2.9,1433;initial catalog=db_geo_transporte;user id=user_transporte;password=O7Ch98f07m;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlCadastro
+        value: 'data source=172.26.2.9,1433;initial catalog=db_cadastro_transporte;user id=user_transporte;password=O7Ch98f07m;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlCadTrans
+        value: 'data source=172.26.2.9,1433;initial catalog=cadtransporte;user id=user_transporte;password=O7Ch98f07m;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringSqlSara
+        value: 'data source=172.26.2.9,1433;initial catalog=db_cadastro_transporte;user id=user_transporte;password=O7Ch98f07m;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+      - name: ConnectionStringCadAluno
+        value: 'data source=172.26.2.9,1433;initial catalog=cadalunos;user id=user_transporte;password=O7Ch98f07m;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500;'
+
+    Produção:
+      - name: ConnectionStringSqlWrite
+        value: 'data source=172.3.1.5;initial catalog=db_sara;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true'
+      - name: ConnectionStringSqlRead
+        value: 'data source=172.3.1.5;initial catalog=db_sara;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500'
+      - name: ConnectionStringSqlGeoRead
+        value: 'data source=172.3.1.5;initial catalog=db_geo_transporte;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500'
+      - name: Connectionstringsqlcadastroread
+        value: 'data source=172.3.1.5;initial catalog=db_cadastro_transporte;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500'
+      - name: ConnectionStringSqlCadTransRead
+        value: 'data source=172.3.1.5;initial catalog=cadtransporte;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500'
+      - name: ConnectionStringSqlSaraRead
+        value: 'data source=172.3.1.5;initial catalog=db_sara;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500'
+      - name: ConnectionStringCadAlunoRead
+        value: 'data source=172.3.1.5;initial catalog=cadalunos;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=500'
+      - name: ConnectionStringSqlGeo
+        value: 'data source=172.3.1.5;initial catalog=db_geo_transporte;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true'
+      - name: ConnectionStringSqlCadastro
+        value: 'data source=172.3.1.5;initial catalog=db_cadastro_transporte;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true'
+      - name: ConnectionStringSqlCadTrans
+        value: 'data source=172.3.1.5;initial catalog=cadtransporte;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true'
+      - name: ConnectionStringSqlSara
+        value: 'data source=172.3.1.5;initial catalog=db_sara;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true'
+      - name: ConnectionStringCadAluno
+        value: 'data source=172.3.1.5;initial catalog=cadalunos;user id=user_transporte;password=E4SAw8wt2f;encrypt=true;trusted_connection=false;trustservercertificate=true;connection timeout=0;'
+
+
+Transporte Cadastro:
+    Desenvolvimento:
+      - name: ConnectionStringSqlSara 
+        value: "Data Source=172.3.1.5;Initial Catalog=DB_CADASTRO_TRANSPORTE;User ID=user_transporte;Password=E4SAw8wt2f;Encrypt=true;Trusted_Connection=false;TrustServerCertificate=true;connection timeout=300;" 
+      - name: ConnectionStringSqlSaraRead 
+        value: "Data Source=172.3.1.5;Initial Catalog=DB_CADASTRO_TRANSPORTE;User ID=user_transporte;Password=E4SAw8wt2f;Encrypt=true;Trusted_Connection=false;TrustServerCertificate=true;connection timeout=300;ApplicationIntent=ReadOnly;" 
+      - name: ConnectionStringCadAluno
+        value: "Data Source=172.3.1.5;Initial Catalog=CADALUNOS;User ID=user_transporte;Password=E4SAw8wt2f;Encrypt=true;Trusted_Connection=false;TrustServerCertificate=true;connection timeout=300;" 
+      - name: ConnectionStringCadAlunoRead 
+        value: "Data Source=172.3.1.5;Initial Catalog=CADALUNOS;User ID=user_transporte;Password=E4SAw8wt2f;Encrypt=true;Trusted_Connection=false;TrustServerCertificate=true;connection timeout=300;ApplicationIntent=ReadOnly;" 
+    
+    
+    Homologação:
+      - name: ConnectionStringSqlSara 
+        value: "Data Source=172.26.2.9,1433;Initial Catalog=DB_CADASTRO_TRANSPORTE;User ID=user_transporte;Password=O7Ch98f07m;Encrypt=true;Trusted_Connection=false;TrustServerCertificate=true;connection timeout=300;" 
+      - name: ConnectionStringSqlSaraRead 
+        value: "Data Source=172.26.2.9,1433;Initial Catalog=DB_CADASTRO_TRANSPORTE;User ID=user_transporte;Password=O7Ch98f07m;Encrypt=true;Trusted_Connection=false;TrustServerCertificate=true;connection timeout=300;ApplicationIntent=ReadOnly;"
+      - name: ConnectionStringCadAluno 
+        value: "Data Source=172.26.2.9,1433;Initial Catalog=CADALUNOS;User ID=user_transporte;Password=O7Ch98f07m;Encrypt=true;Trusted_Connection=false;TrustServerCertificate=true;connection timeout=300;" 
+      - name: ConnectionStringCadAlunoRead 
+        value: "Data Source=172.26.2.9,1433;Initial Catalog=CADALUNOS;User ID=user_transporte;Password=O7Ch98f07m;Encrypt=true;Trusted_Connection=false;TrustServerCertificate=true;connection timeout=300;ApplicationIntent=ReadOnly;"
+  
+
+
+
+
+
+
+
