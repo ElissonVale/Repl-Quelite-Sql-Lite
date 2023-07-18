@@ -95,5 +95,5 @@ export const reload_lexer = () => {
 
 /// Analisa a gramática da query se está correta (servirá para utilizar em um editor por exemplo: extenção e utilização em editores)
 export const analiser = (query_commands) => {
-
+    // Teste
 };
