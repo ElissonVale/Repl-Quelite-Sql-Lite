@@ -163,5 +163,5 @@ export const show = (type, result) => {
 
 const verify_database = () => {
     if(_database === "")
-        throw "No database selected";
+        throw "Error: no database selected!";
 }

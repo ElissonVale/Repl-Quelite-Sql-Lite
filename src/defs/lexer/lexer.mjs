@@ -49,7 +49,7 @@ export const command_rules = () => {
     return lexer_array;
 }
 
-/// Verifica se os rules baseados no comando da query posuem definições profundas do tipo _text_ por exemplo
+/// Verifica se os rules baseados no comando da query posuem definições profundas do tipo _text_ por exemplo (execução)
 export const verify_rules = (rules) => {
     let response = false;
 
@@ -61,12 +61,17 @@ export const verify_rules = (rules) => {
     return response; 
 }
 
-/// Converte os rules em dos tipos _list_text_ em um formato de regra
+/// Verifica se a gramática da query está correta para possivelmente gerar uma exceção de sintaxe (execução)
+export const verify_rules_query = (query, rules) => {
+
+}
+
+/// Converte os rules em dos tipos _list_text_ em um formato de regra (execução)
 export const convert_rules_fy = (rules) => {
    
 }
 
-/// Converte os rules de uma query com base no comando
+/// Converte os rules de uma query com base no comando (execução)
 export const convert_rules_query = (query, rules) => {
     let query_rules = [];
 
@@ -80,6 +85,7 @@ export const convert_rules_query = (query, rules) => {
     return query_rules;
 }
 
+/// Recarrega a arvore do lexer com a gramática da linguagem de query (execução)
 export const reload_lexer = () => {
     lexer_tree = command_rules();
     _fsmanager.write(_path_lexer_tree, JSON.stringify(lexer_tree))
@@ -87,6 +93,7 @@ export const reload_lexer = () => {
     console.log(lexer_tree)
 }
 
+/// Analisa a gramática da query se está correta (servirá para utilizar em um editor por exemplo: extenção e utilização em editores)
 export const analiser = (query_commands) => {
 
 };

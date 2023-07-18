@@ -8,17 +8,19 @@ export const get_dataset = () => {
 } 
 
 export const get_database = (database_name) => {
+    
     let dataset = get_dataset()
 
     let database = dataset["databases"].filter(filter => filter.name === database_name)
 
     if (database.length <= 0)
-        throw 'Nenhum banco de dados selecionado!'
+        throw 'Error: no database selected!'
 
     return database;
 }
 
 export const save_database = (database) => {
+    
     let dataset = get_dataset()
 
     let database_set = dataset["databases"].filter(filter => filter.name === database.name)

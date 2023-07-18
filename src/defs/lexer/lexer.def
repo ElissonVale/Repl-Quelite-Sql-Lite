@@ -9,32 +9,30 @@ _carateres_: [a-z] | [A-Z] | [0-9] ;
 
 _numeros_: [0-9] ;
 
-_text_: _carateres_ ;
+_text_: '_carateres_' ;
 
-_list_text_: _list_text_ _text_ ;
+_list_text_: _list_text_ & '_text_' ;
 
 _operadores_matematicos_: + | - | / | * | = ;
 
-_parameter_atributed_: _text_ = _text_ ;
+_parameter_atributed_: _text_ = '_text_' ;
 
-_list_parameter_atributed_: _list_parameter_atributed_ _parameter_atributed_ ;
+_list_parameter_atributed_: _list_parameter_atributed_ & _parameter_atributed_ ;
 
 _operadores_logicos_:  == | != | > | < | >= | <= ;
 
-_commands_: use | show | create_database | create_table | select | update | delete | where ;
+_commands_: use | show | create | select | update | delete | where ;
 
-use: _text_ ;
+use: '_text_' ;
 
 show: tables | databases ;
 
-create_table: _text_ ( _list_text_ ) ;
+create: database & _text_ | table & _text_ & (_list_text_) ;
 
-create_database: _text_ ;
+select: '_list_text_' & from & '_text_' & where ;
 
-select: _list_text_ where ;
+update: _text_ & _list_parameter_atributed_ & where ;
 
-update: _list_parameter_atributed_ where ;
-
-delete: from where | where ;
+delete: from & _text_ & where | where ;
 
 where: _list_parameter_atributed_ ;
