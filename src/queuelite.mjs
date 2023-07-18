@@ -34,6 +34,8 @@ export const drop_database = (database) => {
 
 export const show_tables = (rules) => {
 
+    verify_database()
+
     let databases = _db_manager.get_database(_database)
 
     let tables = databases[0]['tables'].map(result => { return { table: result['name'], schema: result['schema'] } })
@@ -43,6 +45,8 @@ export const show_tables = (rules) => {
 
 export const create_table = (table, data) => {
     
+    verify_database()
+
     let databases = _db_manager.get_database(data['database'])
 
     let tables = databases[0]['tables'].filter(result => result["name"] === table)
@@ -66,6 +70,8 @@ export const create_table = (table, data) => {
 
 export const drop_table = (table, data) => {
 
+    verify_database()
+
     let databases = _db_manager.get_database(_database)
 
     let _table = databases[0]["tables"].filter((result) => result["name"] === table);
@@ -85,6 +91,8 @@ export const drop_table = (table, data) => {
 }
 
 export const insert_table = (table, data) => {
+
+    verify_database()
 
     let databases = _db_manager.get_database(_database)
 
@@ -113,6 +121,8 @@ export const insert_table = (table, data) => {
 
 export const select_table = (table, data) => {
 
+    verify_database()
+
     let database = _db_manager.get_database(_database)
     
     let _table = database.tables.filter((result) => result["name"] === table);
@@ -121,14 +131,18 @@ export const select_table = (table, data) => {
 
 export const update_table = (table, data) => {
 
+    verify_database()
+
     let database = _db_manager.get_database(_database)
     
     let _table = database.tables.filter((result) => result["name"] === table);
-    
+
 }
 
 export const delete_table = (table, data) => {
 
+    verify_database()
+    
     let database = _db_manager.get_database(_database)
     
     let _table = database.tables.filter((result) => result["name"] === table);
@@ -145,4 +159,9 @@ export const show = (type, result) => {
     }
 
     execute[type](result);
+}
+
+const verify_database = () => {
+    if(_database === "")
+        throw "No database selected";
 }

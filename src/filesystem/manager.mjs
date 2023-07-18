@@ -3,7 +3,6 @@
 import * as _fs from 'fs'
 import * as _path from 'path'
 
-
 var _base_path = './src'
 
 export const read = (path) => {

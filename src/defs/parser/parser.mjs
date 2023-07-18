@@ -2,10 +2,12 @@
 import * as _queue_manager from './../../queuelite.mjs'
 import * as _lexer from './../lexer/lexer.mjs'
 
+/// Utiliza a arvore definida do lexer para quebrar a query em tokens
 const convert_command = (query) => {
     if(query == '')
         return [];
 
+    // Quebra a query em comandos utilizando o terminador ";" ou outro definido na estrutura gramatica do lexer
     let commands_query = query.split(_lexer.lexer_tree.filter(x => x.command === 'finally_command')[0].rules[0]);
 
     let commands_query_rules = commands_query.map((item) => {
@@ -36,6 +38,8 @@ const convert_command = (query) => {
     return commands_query_rules;
 }
 
+
+/// Converte a query em tokens e retorna para a execução
 export const parse_command = (query) => {
 
     if(query.includes('lexer()')) {

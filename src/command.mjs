@@ -1,6 +1,7 @@
 import * as _parser from './defs/parser/parser.mjs'
 import * as _quelite from './queuelite.mjs'
 
+// Command map deve conter o mapeamento entre o comando do lexer e o método Queuelite onde os parâmetros são diretamente os rules
 const _commands_map = [
     { "use": "use_database" },
     { "show": { "databases": "show_databases", "tables": "show_tables" } },
@@ -26,6 +27,7 @@ const command_map = (command) => {
 }
 
 export const execute = (query) => {
+    // Esse é o único tratador de exceção que este app deve conter, todas as exceptions terminam aqui e deven ser criadas apenas com > throw "detalhamento";
     try {
         let commands = _parser.parse_command(query);
 
